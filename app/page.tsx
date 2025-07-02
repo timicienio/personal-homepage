@@ -19,11 +19,11 @@ export default function Page() {
         I'm <strong>Yi-Tong Chen (陳以潼)</strong>, a Taiwan-based master's
         student focusing on <strong>HCI</strong> and <strong>CSCW</strong>{" "}
         studying in the Dept. of Information Management at National Taiwan
-        University. My research explores how technology can assume
+        University. My research explores how technology can assume the
         responsibility in shaping a more desirable future for all.
       </p>
       <p className="mb-4">
-        I'm also lover of music, places, and owner of two cats.
+        I'm also a lover of music, places, and feeder of two cats.
       </p>
       {/* <p className="mb-4">
         {" "}
