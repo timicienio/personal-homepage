@@ -52,7 +52,7 @@ export default async function Blog({ params }) {
 
   return (
     <section>
-      <h1 className="title font-semibold text-5xl tracking-tighter">
+      <h1 className="title font-semibold text-4xl tracking-tighter">
         {post.metadata.title}
       </h1>
 
