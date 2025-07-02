@@ -1,0 +1,449 @@
+---
+title: "The Future of Automated Public Sphere - Lessons Learned from Decentralized Social Networks"
+author: Yi-Tong Chen
+publishedAt: "2025-04-15"
+summary: "Drawing on Frank Pasquale’s vision for human expertise in social media governance, it argues for combining open technical standards, human-in-the-loop moderation, and user autonomy to build healthier, more democratic online spaces."
+---
+
+![Public sphere](/images/posts/social-sphere.png)
+
+At the time of writing, the FTC antitrust trial against Meta is about to
+commence (Vanian, 2025). Whether this will eventually lead to the
+breakup of Meta and its divesting of Instagram is undecided, but it is
+clear that the state of the social media ecosystem is entering a new
+level of public attention and scrutiny, especially in the age of quickly
+evolving AI technology and the social problems it induces. It is worth
+asking: _What should the automated online public sphere look like after
+the potential breakup of Meta?_
+
+In Frank Pasquale's 2020 book _The New Laws of Robotics_, he suggested
+that social media should re-introduce the human expertise of journalism
+into the current "black box" of feed algorithm and automatic content
+moderation, and take the responsibility of media, in order to create a
+healthier environment for public discourse (Pasquale, 2020).
+
+However, one could easily imagine the consequence of such shift in
+platform policy: accusation of censorship and manipulation, accompanied
+with a wave of users leaving the platform for other spaces that align
+more with their values, as evidenced in the 2022 conservative user
+migration to Truth Social, a platform launched by Donald Trump in
+protest of Twitter's ban on his personal account (Dolan, 2024). Such
+fragmentation creates large disjoint online social spheres based on
+users' values, which is even more undesirable than having echo chambers
+created by algorithms on a centralized platform.
+
+To realize Pasquale's vision without such negative impact, a fundamental
+change in the social media ecosystem is unavoidable. Campaigning for the
+breakup of the company he once helped create, Facebook co-founder Chris
+Hughes suggested in his opinion on _The New York Times_ in 2019 that an
+agency should be set up after the breakup of Facebook, in charge of not
+only protecting privacy, but also of guaranteeing basic interoperability
+across these separated platforms (Hughes, 2019). Such "basic
+interoperability" between separate social media services, regardless of
+its actual implementation, can be seen as a first step towards a more
+public future of social connect-ability, one that's based on open
+protocols, instead of closed platforms.
+
+With the rollout of Threads on 2023, Meta itself also seems to embrace
+this vision with its support of sharing content to the "fediverse"
+(**Instagram-n.d**), which is a fully decentralized scheme of social
+media that, for years, has been a refuge for users dissatisfied with
+centralized platforms' policy on user privacy, feed algorithms, and
+toxic environments. In 2019, Twitter also started a research initiative
+on decentralized social media, which later became Bluesky, run by an
+independent public benefit company of the same name. These projects,
+despite being still in early stage of development, demonstrated a
+plausible open future of social network, allowing more actors to
+participate, providing user with greater autonomy, and recognizing
+diverse values.
+
+In this essay, I will first introduce the motivation and basic design of
+existing decentralized social networks. Then, I will explore how these
+schemes address the issues of centralized social media in terms of data
+privacy, feed generation, and content moderation, with a particular
+focus on the opportunities for realizing Pasquale's vision of a
+desirable automated social sphere through respected journalistic
+expertise and human-AI collaboration. Lastly, I will identify the
+lessons that can be learned from decentralized social media as a remedy
+for the current reality.
+
+# Introduction to Decentralized Social Media
+
+Decentralized social media is a style of social network architecture
+that uses distributed infrastructure for the integral social media
+services, such as identity provisioning, data storage, feed generation,
+and content moderation (Roscam Abbing et al., 2023).
+
+## Motivation
+
+Centralized social networks, such as Facebook and Twitter, have
+concentrated control over users' personal and sensitive data, requiring
+users' consent and trust, and put users in a vulnerable position (Jiang
+& Zhang, 2019).
+
+Moreover, the centralized control over modern society's essential social
+functions of networking, information distribution, and content
+moderation, causes concerns for the social network giants' unchecked
+power of social influence (Roscam Abbing et al., 2023), and questions
+about their abilities to properly address issues induced by their
+products, especially at the current scale (Gillespie, 2020).
+
+In order to provide the foundation of solutions to these problems on a
+technical level, multiple paradigms of decentralized social media have
+been proposed, aiming to decentralize the various services of social
+networks to different degrees. These paradigms often involve open
+standards and protocols, to ensure the interoperability while
+maintaining their distributed nature (Roscam Abbing et al., 2023).
+
+## Examples of Decentralized Social Media
+
+### Fediverse
+
+*Federated social media* is characterized by the distributed data
+storage, identity provisioning, and content moderation on individual
+"instances" of servers. The instances are interoperable to each other
+through "federation", based on the underlying ActivityPub protocol, so
+that users can discover and build network across multiple instances.
+
+The resulting federated network of social network services is referred
+as the **_fediverse_**, with a variety of application being built on
+top, such as Mostodon (for Twitter-like microblogging), WriteFreely (for
+blogging) and PeerTube (for video streaming) (Caelin, 2022).
+
+Some centralized social medias have also implemented the ActivityPub
+protocol, and start federating with the existing fediverse instances.
+One prominent example is Threads, Meta's relatively new microblogging
+service, which is interoperable with the fediverse (**Instagram-n.d?**).
+
+### Blockchain-based
+
+Blockchain-based decentralized social networks incorporate blockchain
+technology, which serves as a common state for distributed
+infrastructures (Schneider, 2019).
+
+The most important motivation behind the use of blockchain technology in
+OSNs is its potential of distributed monetization of content moderation
+and recommendation using cryptocurrencies and smart contracts (Jiang &
+Zhang, 2019).
+
+### AT Protocol
+
+![Architecture of AT Protocol](/images/posts/atproto.png)
+
+AT Protocol (Kleppmann et al., 2024) was developed by BluesSky Social, a
+public-benefit corporation invested by then Twitter CEO Jack Dorsey,
+aiming to construct a decentralized social network ecosystem that
+de-couples the functions of data hosting and content curation, in order
+to address the usability issue in fediverse, while preserving an open
+protocol nature.
+
+The general architecture of AT Protocol resembles that of the Web, which
+itself is a decentralized system for information hosting and
+distribution. In AT Protocol, each user's activity records (e.g. posts,
+likes, follows) are saved and hosted on a Personal Data Server (PDS),
+which is analogous to "websites". To make these distributed data usable,
+the system will include multiple indexers that watch and aggregate the
+data from PDSes, analogous to "search engines". Just like how Google
+provides a slice of the Web and ranking of websites for different
+queries (and this different information needs), these indexers can
+provide either opinionated or un-opinionated content feed (feed
+generators), as well as content moderation based on different standards,
+from misinformation to outright hate speech (labelers).
+
+Most interestingly, AT Protocol utilizes the Domain Name Services (DNS)
+as the distributed solution for username-user ID resolution. In addition
+to leveraging existing DNS infrastructure of ICANN, members of
+organizations with well-known domain names can also use a subdomain as
+username, asserting their authenticity via the inherent authority of
+domain name delegation hierarchy.
+
+# Decentralized Social Media's Solved & Unsolved Issues
+
+## Data Hosting
+
+One of the driving forces of decentralized social media is the concern
+for centralized control of sensitive user data (Roscam Abbing et al.,
+2023). As a result, distributed storage and hosting of user data is a
+common feature across all paradigms of DOSNs, providing user more
+control over how their personal data are stored, processed and
+transported.
+
+In fediverse, the service instance is in charge of storage and hosting
+of user data, and the propagation of these data are constrained by the
+federation network of the instance, for purposes usually no other than
+content sharing. Similarly, the user can freely decide the host of their
+personal data via the choice of PDSes, but all their activity data is
+public due to the current protocol limits (Kleppmann et al., 2024). Both
+schemes provide users with a clear mental model of how their data is
+being used, and who should be held accountable in the case of
+infringement. However, the decentralized nature of such protocols also
+lowers the boundary for ill-intentioned hosts to enter the ecosystem,
+and whether these trusted distributed server owners or service providers
+have the expertise to provide security guarantee remains
+questionable (Laux et al., 2023).
+
+Some blockchain-based social network solutions proposes to provide
+security guarantee in a distributed fashion with its immutable records
+of user activity and user-controllable encryptions (Sarode et al.,
+2024)\[(Jiang & Zhang, 2019)\]. However, such systems, like a large
+portion of blockchain applications, is burdened by its poor scalability
+and high operation costs (Singh, 2025), compromising its practicality. A
+report published by the European Parliament in 2019 has also identified
+a tension between the immutability nature of blockchain records and the
+right to be forgotten regulated by GDPR (European Parliament, 2019),
+which is even more problematic when the records bare the details of the
+subjects' online social interactions. The technical complexity of
+blockchain applications also begs the question of how much trust it can
+gain from average non-tech-savvy users.
+
+## Content Discovery and Feed Generation
+
+Due to the distributed nature of its ecosystems, implementing a
+data-driven feed generation algorithm is more complex in DOSNs.
+Microblogging fediverse applications like Mastodon usually have a
+reverse-chronological feed with content from the accounts one follows
+and on their local fediverse instance, with content discovery heavily
+depending on users' proactive searching and networking. This may satisfy
+users who was nostalgic of the simple, manipulation-free environment of
+early Instagram, but it also compromises the usability of federated
+social media, especially in a modern social media landscape
+characterized by precise recommendation algorithms and content
+discoverability (Kleppmann et al., 2024).
+
+To enhance the quality of feeds while preserving privacy, some fediverse
+add-ons like RaccoonBits (Pacheco, 2025) provide local user-controllable
+algorithms for users, but its ability is fairly limited due to the
+amount of data accessible. Some blockchain-based solution moves the
+collective feed generation function to Ethereum smart contracts,
+addressing the issue in a open, distributed fashion, with a additional
+benefit of monetizing such work. However, such proposals only move the
+traditionally centralized feed algorithm function to the distributed
+blockchain on a technical level, without directly addressing the issue
+of algorithm autonomy and explainability.
+
+Meanwhile, The AT protocol recognizes the need of an aggregated source
+of activity updates and a diverse profile of fed filtering and sorting
+services, and that it requires a widely disjoint expertise from that of
+data hosting (Kleppmann et al., 2024). Instead of proposing a
+centralized architecture, the AT protocol wishes to create
+a *marketplace* of "feed generators" in the ecosystem, each can afford
+different user interest and values. Such architecture could also afford
+the "slow media" paradigm (Noble, 2018), where human feed creators can
+participate freely in shaping its trusters' feed. This enables actors
+such as journalists in re-taking a role of shaping the public discourse
+using a mixture of human expertise and scalable algorithm in a
+trust-based, open competition manner, as suggested by Pasquale
+(Pasquale, 2020).
+
+## Moderation
+
+In fediverse, the responsibility of moderation lies on the instance
+admin. Each instance has its own "code of conduct" (CoC), governing the
+content generated by the users within the instance. The modification of
+the CoC is often democratic, involving public discussion and voting.
+Since the admin of an instance is often part of the community, they are
+embedded in the relevant social context, thus able to make more nuanced
+moderation decisions. In the case of undesirable content coming from
+other instances, the admin also have the power to silence or de-federate
+the problematic instance. Under this design, users can also choose their
+preferred style of moderation by choosing a instance to create account
+on (Caelin, 2022).
+
+It has apparent downsides as well. Researches have found that a lot of
+Mastodon instances are "understaffed", with the majority of instances
+having a single admin (Anaobi et al., 2023). The size of instances also
+impacts moderation quality, leading to some instances intentionally
+limit its membership size (Caelin, 2022). Unscalable and uncompensated,
+it contradicts the vision of valuing the role of journalists and
+fact-checkers as paid professionals participating in an automated public
+sphere proposed by Pasquale (Pasquale, 2020).
+
+The AT protocol addresses the moderation issue with a similar mechanism
+as feed generators, delegating the job of flagging problematic content
+to "labelers" services, each with its own goals (e.g. curbing
+misinformation and filtering hate speech) and standards. Similar to feed
+generators, these labelers can be opinionated, and users get to decide
+whose judgements to trust (Kleppmann et al., 2024). This creates an
+opportunity for professional fact-checkers and moderators to influence
+the content quality at scale, while taming the concerns for censorship
+and manipulation. Monetization for both feed generator and labeler
+services will likely be done with a subscription-based fashion (Lang,
+2024), although it is unclear whether such business model can
+effectively attract users.
+
+# Lessons Learned from Decentralized Social Media
+
+Despite painting a seemingly bright future, we are far from the utopia
+envisioned by any of these decentralized social media platforms. The
+fediverse pales comparison in membership to any mainstream alternatives.
+Bluesky is still the only major social application on AT protocol, and
+its promise of decentralizing might still eventually lead to a
+centralized ecosystem, resembling the emergence of tech giants on the
+Web, which is the very model of distributed architecture success it
+wishes to replicate.
+
+However, insights can still be drawn from the experience of
+decentralized social network, providing guidance for developers and
+lawmakers alike, in shaping a desirable automated public sphere in the
+current reality.
+
+## Trust-based Data Governance is Unavoidable
+
+As evidenced in the Data Hosting section, there is no avoiding the issue
+of trust between the human subject and the technology. Indeed, the
+practice of delegating control of data is an inherently trust-based
+issue that no amount of distributed actors or zero-trust technology can
+solve.
+
+Instead, data governance regulations such as GDPR should examine its
+compatibility with these emerging social network paradigms, which may
+soon be incorporated into mainstream social media. Issues like the
+above-mentioned tension between right to be forgotten and blockchain
+immutability, cross-border data transfer, as well as the difficulty of
+identifying data controller in a federated scheme of social media,
+should be addressed (European Parliament, 2019).
+
+Moreover, in a future where no single party controls the majority of
+users' social data, data trust initiatives designed for citizens' social
+activity data can be considered, unlocking the beneficial data
+potential, while protecting the data subjects' rights of participation
+in data decisions (The Global Partnership on AI, 2021).
+
+## Value of Human Moderation
+
+Although unscalable, the purely human moderation practice on Mastodon is
+appreciated by its users. Not only can human admins make moderation
+decisions embedded in the social and cultural context, they can also
+facilitate public discussions and democratic procedures regarding
+decisions about the community rules (Caelin, 2022). In essence, such
+constant discussion and reconsideration of social rules and common
+values by community members is what holds together a society (Gillespie,
+2020).
+
+To leverage "the human touch" while also be scalable, a
+"human-in-the-loop" collaborative mechanism should be ensured for
+content moderation. Past experience of collaboration between journalists
+and Facebook on improving the site's content qualities has seen mixed
+results, largely due to the tensions of different motivations and
+competing priorities (Ananny, 2018). Concerns have also been raised for
+the human reviews' wellbeing, as they are constantly exposed to explicit
+or brutal contents pending their reviews (Roberts, 2019). Both of these
+problems might be addressed with a transparent, human-centered
+moderation platform, which clearly reflects the interests of all
+parties. This platform can prioritize human review for content requiring
+more cultural sensitivity, and machines for those potentially scarring
+(Gillespie, 2020).
+
+New regulations like the EU's Digital Services Act (DSA) have already
+started to require platforms to employ sufficient staff for timely
+moderation and ensure cultural competence among moderators. Trusted
+flaggers with local expertise are also being integrated into moderation
+workflows (European Commission, 2024). The UK's Online Safety Act
+emphasizes proportionality in moderation efforts based on platform size
+and risk profile, further incentivizing platforms to refine their human
+oversight mechanisms (UK Government, 2023). Similar regulations should
+be extended to ensure the workers' compensation and wellbeing that
+reflects the importance of their role in modern society.
+
+## Respecting User Autonomy
+
+Perhaps the biggest lesson that can be drawn from decentralized social
+media is to respect user autonomy, and to trust that individual actors'
+conscious decisions can benefit society as a whole.
+
+Decentralized social media origins as a reaction for centralized
+algorithmic manipulation and censorship. Its technical mechanisms do not
+inherently prevent the emergence of ill-intentioned actors in society,
+but these communities have demonstrated resilience toward these threats
+via collective social actions (Caelin, 2022). Fringe social media might
+be a refuge for extremism, but it will always exist somewhere on the
+Internet, no matter what the technical topology of social network is.
+It's the matter of how we the social members maintain a proper distance
+and interaction with these groups.
+
+User autonomy can also be embodied in their conscious choice of the
+social content they are exposed to. By acknowledging the subjective
+nature of feed curation and trusting users' decisions, coupled with an
+easily understandable mental model, Bluesky's feed generator and labeler
+marketplace (Kleppmann et al., 2024) is a great example of algorithmic
+explainability and user autonomy. Such a trust-based relationship among
+users, journalists and fact-checkers could be modeled in other social
+media, letting these parties have a more prominent influence on the
+users' content consumption and interpretation.
+
+One might be concerned about the potential of intensified echo chamber
+effect once users have the choice of who to trust with deciding the
+content they view. However, research in the field of human-computer
+interaction (HCI) has shown that users do consciously look for
+information that is outside of their comfort zones when they have the
+mental capacity to do so, and that such practices is essential in users'
+development of critical thinking (Chen et al., 2022), (Jahanbakhsh et
+al., 2022). The social media should afford the choice of exploring
+challenging contents and taking rests in comfort zones, instead of
+fixating a user's preference in a static algorithmic equilibrium.
+
+# Conclusion
+
+Decentralized social media platforms offer promising solutions to the
+problems of centralized control, data privacy, and content moderation.
+While these new models empower users and encourage diverse values, they
+also face challenges in scalability, usability, and trust. The lessons
+from decentralized networks highlight the importance of user autonomy,
+transparent data governance, and the continued value of human
+moderation. As the social media landscape evolves, combining open
+protocols with human expertise and thoughtful regulation can help create
+a healthier, more democratic online public sphere.
+
+# References
+
+Ananny, M. (2018). The partnership press: Lessons for platform-publisher collaborations as Facebook and news outlets team to fight misinformation. _Columbia Journalism Review_. [https://www.cjr.org/tow_center_reports/partnership-press-facebook-news-outlets-team-fight-misinformation.php/](https://www.cjr.org/tow_center_reports/partnership-press-facebook-news-outlets-team-fight-misinformation.php/)
+
+Anaobi, I. H., Raman, A., Castro, I., Zia, H. B., Ibosiola, D., & Tyson, G. (2023). Will Admins Cope? Decentralized Moderation in the Fediverse. _Proceedings of the ACM Web Conference 2023_, 3109–3120. [https://doi.org/10.1145/3543507.3583487](https://doi.org/10.1145/3543507.3583487)
+
+Caelin, D. (2022). Decentralized Networks vs The Trolls. In H. Mahmoudi, M. H. Allen, & K. Seaman (Eds.), _Fundamental Challenges to Global Peace and Security : The Future of Humanity_ (pp. 143–168). Springer International Publishing. [https://doi.org/10.1007/978-3-030-79072-1_8](https://doi.org/10.1007/978-3-030-79072-1_8)
+
+Dolan, E. W. (2024, May 2). From Twitter to Truth Social: How Trump’s shift in platforms influenced media attention. _PsyPost - Psychology News_. [https://www.psypost.org/from-twitter-to-truth-social-how-trumps-shift-in-platforms-influenced-media-attention/](https://www.psypost.org/from-twitter-to-truth-social-how-trumps-shift-in-platforms-influenced-media-attention/)
+
+European Commission. (2024). _Questions and answers on the Digital Services Act\*_ [Text]. European Commission - European Commission. [https://ec.europa.eu/commission/presscorner/detail/en/qanda_20_2348](https://ec.europa.eu/commission/presscorner/detail/en/qanda_20_2348)
+
+European Parliament. (2019). _Blockchain and the general data protection regulation: can distributed ledgers be squared with European data protection law?_ Publications Office. [https://data.europa.eu/doi/10.2861/535](https://data.europa.eu/doi/10.2861/535)
+
+Gillespie, T. (2020). Content moderation, AI, and the question of scale. _Big Data & Society_, _7_(2), 2053951720943234. [https://doi.org/10.1177/2053951720943234](https://doi.org/10.1177/2053951720943234)
+
+Hughes, C. (2019, May 9). Opinion | It’s Time to Break Up Facebook. _The New York Times_. [https://www.nytimes.com/2019/05/09/opinion/sunday/chris-hughes-facebook-zuckerberg.html](https://www.nytimes.com/2019/05/09/opinion/sunday/chris-hughes-facebook-zuckerberg.html)
+
+Instagram. (n.d.). _About Threads and the fediverse | Instagram Help Center_. [https://help.instagram.com/169559812696339](https://help.instagram.com/169559812696339)
+
+Jahanbakhsh, F., Zhang, A. X., & Karger, D. R. (2022). Leveraging Structured Trusted-Peer Assessments to Combat Misinformation. _Proceedings of the ACM on Human-Computer Interaction_, _6_(CSCW2), 1–40. [https://doi.org/10.1145/3555637](https://doi.org/10.1145/3555637)
+
+Jiang, L., & Zhang, X. (2019). BCOSN: A Blockchain-Based Decentralized Online Social Network. _IEEE Transactions on Computational Social Systems_, _6_(6), 1454–1466. [https://doi.org/10.1109/TCSS.2019.2941650](https://doi.org/10.1109/TCSS.2019.2941650)
+
+Kleppmann, M., Frazee, P., Gold, J., Graber, J., Holmgren, D., Ivy, D., Johnson, J., Newbold, B., & Volpert, J. (2024). Bluesky and the AT Protocol: Usable Decentralized Social Media. _Proceedings of the ACM Conext-2024 Workshop on the Decentralization of the Internet_, 1–7. [https://doi.org/10.1145/3694809.3700740](https://doi.org/10.1145/3694809.3700740)
+
+Lang, K. (2024). Subscriptions and Monetization are Coming to Bluesky — Here’s How They’ll Work. _Buffer: All-You-Need Social Media Toolkit for Small Businesses_. [https://buffer.com/resources/bluesky-subscriptions-monetization/](https://buffer.com/resources/bluesky-subscriptions-monetization/)
+
+Laux, L., Erdődi, L., & Selgrad, K. (2023). Trust as the Elephant in the Room: Security Evaluation of Decentralized Online Social Networks with Mastodon. _Norsk IKT-Konferanse for Forskning Og Utdanning_, _3_, Article 3. [https://www.ntnu.no/ojs/index.php/nikt/article/view/5653](https://www.ntnu.no/ojs/index.php/nikt/article/view/5653)
+
+Noble, S. U. (2018). _Algorithms of oppression: how search engines reinforce racism_. New York University Press.
+
+Pacheco, M. (2025). _mahomedalid/raccoonbits_ [C#]. [https://github.com/mahomedalid/raccoonbits](https://github.com/mahomedalid/raccoonbits) (Original work published 2023)
+
+Pasquale, F. (2020). _New Laws of Robotics: Defending Human Expertise in the Age of AI_. Harvard University Press. [https://doi.org/10.2307/j.ctv3405w6p](https://doi.org/10.2307/j.ctv3405w6p)
+
+Rader, E., & Gray, R. (2022). VisualBubble: Exploring How Reflection-Oriented User Experiences Affect Users’ Awareness of Their Exposure to Misinformation on Social Media. _CHI Conference on Human Factors in Computing Systems Extended Abstracts_, 1–7. [https://doi.org/10.1145/3491101.3519615](https://doi.org/10.1145/3491101.3519615)
+
+Roberts, S. T. (2019). _Behind the screen: content moderation in the shadows of social media_. Yale University press.
+
+Roscam Abbing, R., Diehm, C., & Warreth, S. (2023). Decentralised social media. _Internet Policy Review_, _12_(1). [https://doi.org/10.14763/2023.1.1681](https://doi.org/10.14763/2023.1.1681)
+
+Sarode, R. P., Watanobe, Y., & Bhalla, S. (2024). A Decentralized Blockchain Powered Social Network for Secure and Transparent Online Interactions. _Proceedings of the 2023 4th Asia Service Sciences and Software Engineering Conference_, 141–147. [https://doi.org/10.1145/3634814.3634834](https://doi.org/10.1145/3634814.3634834)
+
+Schneider, N. (2019). Decentralization: an incomplete ambition. _Journal of Cultural Economy_. [https://www.tandfonline.com/doi/abs/10.1080/17530350.2019.1589553](https://www.tandfonline.com/doi/abs/10.1080/17530350.2019.1589553)
+
+Singh, D. (2025). _Exploring Blockchain Scalability and Its Impact on Adoption_. Debutinfotech. [https://www.debutinfotech.com/blog/what-is-blockchain-scalability](https://www.debutinfotech.com/blog/what-is-blockchain-scalability)
+
+The Global Partnership on AI. (2021). _Understanding data trusts_. [/publications/understanding-data-trusts-a-perspective-from-the-global-partnership-on-ai](https://doi.org//publications/understanding-data-trusts-a-perspective-from-the-global-partnership-on-ai)
+
+UK Government. (2023). _Online Safety Act: explainer_. GOV.UK. [https://www.gov.uk/government/publications/online-safety-act-explainer/online-safety-act-explainer](https://www.gov.uk/government/publications/online-safety-act-explainer/online-safety-act-explainer)
+
+Vanian, J. (2025, April 11). Meta faces the FTC as blockbuster antitrust trial kicks off. _CNBC_. [https://www.cnbc.com/2025/04/11/ftc-meta-instagram-whatsapp-lawsuit.html](https://www.cnbc.com/2025/04/11/ftc-meta-instagram-whatsapp-lawsuit.html)

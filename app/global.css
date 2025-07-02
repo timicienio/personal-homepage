@@ -1,4 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+/* 1. Load CharterBT font */
+@font-face {
+  font-family: "CharterBT";
+  src: url("/fonts/CharterBT.woff2") format("woff2"),
+    url("/fonts/CharterBT.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 ::selection {
   background-color: #47a3f3;
@@ -33,6 +43,12 @@ html {
   min-width: 360px;
 }
 
+body {
+  font-family: "Charter", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+}
+
 .prose .anchor {
   @apply absolute invisible no-underline;
 
@@ -53,7 +69,7 @@ html {
 
 .prose .anchor:after {
   @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
+  content: "#";
 }
 
 .prose *:hover > .anchor {
@@ -92,11 +108,11 @@ html {
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-3xl font-medium tracking-tight mt-6 mb-2;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-2xl font-medium tracking-tight mt-6 mb-2;
 }
 
 .prose h4 {
@@ -131,8 +147,8 @@ pre {
 }
 
 /* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
