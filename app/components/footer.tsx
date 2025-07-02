@@ -27,7 +27,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/tmcn/"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">linedin</p>
+            <p className="ml-2 h-7">linkedin</p>
           </a>
         </li>
         <li>
