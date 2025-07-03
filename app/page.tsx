@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="mb-8 text-4xl font-semibold tracking-tighter">
-        Yi-Tong Chen&apos;s Corner
+        Yi-Tong&apos;s Corner
       </h1>
       <Image
         src="/images/profile.jpeg"

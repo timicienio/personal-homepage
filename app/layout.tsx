@@ -9,15 +9,15 @@ import { baseUrl } from "./sitemap";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Yi-Tong Chen's Corner",
-    template: "%s | Yi-Tong Chen's Corner",
+    default: "Yi-Tong's Corner",
+    template: "%s | Yi-Tong's Corner",
   },
   description: "This is Yi-Tong Chen's little corner on the web.",
   openGraph: {
-    title: "Yi-Tong Chen's Corner",
+    title: "Yi-Tong's Corner",
     description: "This is Yi-Tong Chen's little corner on the Web.",
     url: baseUrl,
-    siteName: "Yi-Tong Chen's Corner",
+    siteName: "Yi-Tong's Corner",
     locale: "en_US",
     type: "website",
   },
