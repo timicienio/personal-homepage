@@ -161,6 +161,13 @@ table {
   white-space: nowrap;
 }
 
+blockquote {
+  font-style: italic;
+  margin-left: 16px;
+  margin-right: 16px;
+  opacity: 90%;
+}
+
 .title {
   text-wrap: balance;
 }

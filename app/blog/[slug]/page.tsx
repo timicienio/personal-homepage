@@ -6,6 +6,7 @@ import Markdown from "react-markdown";
 
 import { formatDate, getBlogPosts } from "app/blog/utils";
 import { baseUrl } from "app/sitemap";
+import remarkGfm from "remark-gfm";
 
 export async function generateStaticParams() {
   return getBlogPosts().map(({ slug }) => ({ slug }));
@@ -61,7 +62,7 @@ export default async function Blog({ params }) {
       </p>
 
       <article className="prose">
-        <Markdown>{post.content}</Markdown>
+        <Markdown remarkPlugins={[remarkGfm]}>{post.content}</Markdown>
       </article>
     </section>
   );
