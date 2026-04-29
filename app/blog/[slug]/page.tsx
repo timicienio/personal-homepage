@@ -1,6 +1,3 @@
-/* app/blog/[slug]/page.tsx (or .jsx) */
-import fs from "fs";
-import path from "path";
 import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
 

@@ -9,15 +9,17 @@ import { baseUrl } from "./sitemap";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Yi-Tong's Corner",
-    template: "%s | Yi-Tong's Corner",
+    default: "Yi-Tong Chen",
+    template: "%s | Yi-Tong Chen",
   },
-  description: "This is Yi-Tong Chen's little corner on the web.",
+  description:
+    "This is Yi-Tong Chen's little corner on the web. He is a HCI researcher caring about how marginalized communities negotiate with technology. He is currently a master's student at National Taiwan University, advised by Assistant Professor Nanyi Bi.",
   openGraph: {
-    title: "Yi-Tong's Corner",
-    description: "This is Yi-Tong Chen's little corner on the Web.",
+    title: "Yi-Tong Chen",
+    description:
+      "This is Yi-Tong Chen's little corner on the web. He is a HCI researcher caring about how marginalized communities negotiate with technology. He is currently a master's student at National Taiwan University, advised by Assistant Professor Nanyi Bi.",
     url: baseUrl,
-    siteName: "Yi-Tong's Corner",
+    siteName: "Yi-Tong Chen",
     locale: "en_US",
     type: "website",
   },
