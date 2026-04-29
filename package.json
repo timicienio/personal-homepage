@@ -15,7 +15,7 @@
     "charter-webfont": "^4.1.0",
     "google": "link:@next/third-parties/google",
     "next": "^14",
-    "next-mdx-remote": "^4.4.1",
+    "next-mdx-remote": "^6",
     "postcss": "^8.4.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
