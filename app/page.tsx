@@ -16,11 +16,11 @@ export default function Page() {
         className="mb-4"
       />
       <p className="mb-4">
-        I'm <strong>Yi-Tong Chen (陳以潼)</strong>, a Taiwan-based master's
-        student focusing on <strong>HCI</strong> and <strong>CSCW</strong>{" "}
-        studying in the Dept. of Information Management at National Taiwan
-        University. My research explores how technology can assume the
-        responsibility in shaping a more desirable future for all.
+        I'm <strong>Yi-Tong Chen (陳以潼)</strong>, a Taiwan-based HCI
+        researcher. I'm currently studying in the Dept. of Information
+        Management at National Taiwan University as a Master's student. My
+        research focuses on how marginalized positionalities and communities
+        negotiate with technologies to foster resilience and creativity.
       </p>
       <p className="mb-4">
         I'm also a lover of music, places, and feeder of two cats.
