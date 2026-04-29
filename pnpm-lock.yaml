@@ -19,6 +19,9 @@ dependencies:
   '@vercel/speed-insights':
     specifier: ^1.0.9
     version: 1.0.9(next@14.2.4)(react@18.2.0)
+  bibtex-parse:
+    specifier: ^2.1.0
+    version: 2.1.0
   charter-webfont:
     specifier: ^4.1.0
     version: 4.1.0
@@ -462,6 +465,10 @@ packages:
 
   /bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
+    dev: false
+
+  /bibtex-parse@2.1.0:
+    resolution: {integrity: sha512-Ej1vvnhfEfegd2WAeQ1dWJ/NkS3Cb84zRPeMMCFDcOSvAJFAmhm/sAr2oLpK/KQITlnHk0g6+zBokGvLe9+NaQ==}
     dev: false
 
   /busboy@1.6.0:

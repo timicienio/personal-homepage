@@ -3,7 +3,8 @@
 /* 1. Load CharterBT font */
 @font-face {
   font-family: "CharterBT";
-  src: url("/fonts/CharterBT.woff2") format("woff2"),
+  src:
+    url("/fonts/CharterBT.woff2") format("woff2"),
     url("/fonts/CharterBT.woff") format("woff");
   font-weight: normal;
   font-style: normal;
